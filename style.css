@@ -6,7 +6,7 @@
   font-family:'Inter',sans-serif;
 }
 
-/* BODY BACKGROUND */
+/* BODY */
 body{
   background:url('dark-bg.png') no-repeat center/cover;
   color:white;
@@ -31,26 +31,18 @@ body.light .overlay{
   background:rgba(255,255,255,0.88);
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero{
   height:55vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  text-align:center;
   position:relative;
 }
 
-.hero h1{
-  font-size:48px;
-  letter-spacing:1px;
-}
-
-.subtitle{
-  opacity:0.8;
-  margin-top:5px;
-}
+.hero h1{ font-size:48px; }
+.subtitle{ opacity:0.8; margin-top:5px; }
 
 /* INFO CARDS */
 .info-cards{
@@ -58,7 +50,7 @@ body.light .overlay{
   justify-content:center;
   gap:30px;
   flex-wrap:wrap;
-  margin-top:-40px; /* pulls cards closer to hero */
+  margin-top:-40px;
 }
 
 .info-card{
@@ -68,7 +60,6 @@ body.light .overlay{
   background:rgba(20,20,20,0.85);
   backdrop-filter:blur(12px);
   transition:0.3s;
-  text-align:center;
 }
 
 .info-card:hover{
@@ -81,9 +72,7 @@ body.light .info-card{
 }
 
 /* BUTTON */
-.center{
-  margin-top:25px;
-}
+.center{ margin-top:25px; }
 
 .btn{
   padding:12px 25px;
@@ -93,7 +82,6 @@ body.light .info-card{
   font-weight:600;
   background:white;
   color:black;
-  transition:0.2s;
 }
 
 .btn:hover{
@@ -102,7 +90,6 @@ body.light .info-card{
 
 /* PROJECTS */
 .section{ margin-top:60px; }
-
 .hidden{ display:none; }
 
 .project-container{
@@ -132,28 +119,26 @@ body.light .project-card{
 }
 
 /* ICONS */
-.icons{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:10px;
-}
-
-.icons img{
-  width:24px;
-  filter:invert(1);
-  transition:0.2s;
+.icon{
+  width:26px;
+  transition:0.3s;
   cursor:pointer;
 }
 
-.icons img:hover{
+.icon:hover{
   transform:scale(1.15);
 }
 
-body.light .icons img{
-  filter:invert(0);
+/* AUTO SWAP ICONS */
+body.light .github{
+  content:url('github-black.png');
 }
 
-/* CONTACT LINKS */
+body.light .globe{
+  content:url('globe-black.png');
+}
+
+/* CONTACT */
 .links a{
   display:block;
   margin:6px;
@@ -171,7 +156,7 @@ footer{
   opacity:0.6;
 }
 
-/* ===== MODERN TOGGLE SWITCH ===== */
+/* TOGGLE SWITCH */
 .switch{
   position:absolute;
   top:20px;
@@ -189,7 +174,6 @@ footer{
   border-radius:30px;
   position:relative;
   cursor:pointer;
-  transition:0.3s;
 }
 
 .slider::before{
