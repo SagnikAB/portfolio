@@ -41,8 +41,15 @@ body.light .overlay{
   position:relative;
 }
 
-.hero h1{ font-size:48px; }
-.subtitle{ opacity:0.8; margin-top:5px; }
+.hero h1{
+  font-size:48px;
+  letter-spacing:1px;
+}
+
+.subtitle{
+  opacity:0.8;
+  margin-top:5px;
+}
 
 /* ===== INFO CARDS ===== */
 .info-cards{
@@ -62,7 +69,9 @@ body.light .overlay{
   transition:0.3s;
 }
 
-.info-card:hover{ transform:translateY(-8px); }
+.info-card:hover{
+  transform:translateY(-8px);
+}
 
 body.light .info-card{
   background:white;
@@ -70,7 +79,9 @@ body.light .info-card{
 }
 
 /* ===== BUTTON ===== */
-.center{ margin-top:25px; }
+.center{
+  margin-top:25px;
+}
 
 .btn{
   padding:12px 25px;
@@ -83,11 +94,18 @@ body.light .info-card{
   transition:0.2s;
 }
 
-.btn:hover{ transform:scale(1.05); }
+.btn:hover{
+  transform:scale(1.05);
+}
 
 /* ===== PROJECTS ===== */
-.section{ margin-top:60px; }
-.hidden{ display:none; }
+.section{
+  margin-top:60px;
+}
+
+.hidden{
+  display:none;
+}
 
 .project-container{
   display:flex;
@@ -106,7 +124,9 @@ body.light .info-card{
   transition:0.3s;
 }
 
-.project-card:hover{ transform:translateY(-6px); }
+.project-card:hover{
+  transform:translateY(-6px);
+}
 
 body.light .project-card{
   background:white;
@@ -122,15 +142,34 @@ body.light .project-card{
 
 .icon{
   width:26px;
+  height:26px;
+  object-fit:contain;
   transition:0.3s;
   cursor:pointer;
 }
 
-.icon:hover{ transform:scale(1.15); }
+.icon:hover{
+  transform:scale(1.15);
+}
 
-/* AUTO SWAP ICONS */
-body.light .github{ content:url('github-black.png'); }
-body.light .globe{ content:url('globe-black.png'); }
+/* ===== ICON SWAP SYSTEM ===== */
+
+/* Default = Dark Mode */
+.github-light,
+.globe-light{
+  display:none;
+}
+
+/* Light Mode */
+body.light .github-dark,
+body.light .globe-dark{
+  display:none;
+}
+
+body.light .github-light,
+body.light .globe-light{
+  display:inline;
+}
 
 /* ===== CONTACT ===== */
 .links a{
@@ -140,7 +179,9 @@ body.light .globe{ content:url('globe-black.png'); }
   color:cyan;
 }
 
-body.light .links a{ color:blue; }
+body.light .links a{
+  color:blue;
+}
 
 /* ===== FOOTER ===== */
 footer{
@@ -148,14 +189,16 @@ footer{
   opacity:0.6;
 }
 
-/* ===== PREMIUM TOGGLE SWITCH WITH OUTLINE ===== */
+/* ===== PREMIUM TOGGLE SWITCH ===== */
 .switch{
   position:absolute;
   top:20px;
   right:20px;
 }
 
-.switch input{ display:none; }
+.switch input{
+  display:none;
+}
 
 .slider{
   width:60px;
@@ -163,21 +206,16 @@ footer{
   border-radius:50px;
   background:rgba(255,255,255,0.15);
   backdrop-filter:blur(10px);
-
-  /* OUTLINE */
   border:2px solid rgba(255,255,255,0.4);
-
   position:relative;
   cursor:pointer;
   transition:0.3s ease;
-
-  /* OUTER + INNER GLOW */
   box-shadow:
     0 0 8px rgba(0,0,0,0.5),
     inset 0 0 6px rgba(255,255,255,0.2);
 }
 
-/* Circle Knob */
+/* Toggle Circle */
 .slider::before{
   content:"☾";
   position:absolute;
@@ -210,11 +248,10 @@ footer{
   color:white;
 }
 
-/* LIGHT MODE VISIBILITY FIX */
+/* LIGHT MODE VISIBILITY */
 body.light .slider{
   background:rgba(0,0,0,0.1);
   border:2px solid rgba(0,0,0,0.35);
-
   box-shadow:
     0 0 6px rgba(0,0,0,0.25),
     inset 0 0 4px rgba(0,0,0,0.15);
@@ -227,6 +264,10 @@ body.light .slider::before{
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
-  .hero h1{ font-size:34px; }
-  .info-cards{ margin-top:-20px; }
+  .hero h1{
+    font-size:34px;
+  }
+  .info-cards{
+    margin-top:-20px;
+  }
 }
