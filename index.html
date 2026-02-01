@@ -1,102 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sagnik Dam | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>Sagnik Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h2>Sagnik</h2>
+<div class="overlay">
 
-    <div class="theme-toggle">
-      <input type="checkbox" id="darkToggle" />
-      <label for="darkToggle" class="toggle-label">
-        <span class="toggle-circle"></span>
-      </label>
-    </div>
-  </nav>
+<header>
+  <h1>Sagnik Dam</h1>
+  <p>Aspiring Software Developer</p>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Sagnik Dam</h1>
-    <p class="tagline">Full-Stack Developer | Building ideas into code</p>
+  <label class="switch">
+    <input type="checkbox" id="modeToggle">
+    <span class="slider"></span>
+  </label>
+</header>
 
-    <div class="hero-buttons">
-      <a href="#projects" class="btn primary">View Projects</a>
-      <a href="#contact" class="btn secondary">Contact Me</a>
-    </div>
-  </section>
+<section class="about">
+  <h2>About Me</h2>
+  <p>I build web apps, developer tools and love exploring AI technologies.</p>
+</section>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      I’m a CS student and full-stack developer passionate about building real-world
-      web applications using modern technologies. I enjoy turning ideas into
-      functional, scalable products.
-    </p>
-  </section>
+<section class="tech">
+  <h2>Tech Stack</h2>
+  <p>Python • Java • C • C++ • JavaScript • HTML • CSS • Git • GitHub • VS Code</p>
+</section>
 
-  <!-- SKILLS -->
-  <section class="skills">
-    <h2>Skills</h2>
-    <div class="skill-grid">
-      <span>Java</span>
-      <span>Python</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>Node.js</span>
-      <span>Vercel</span>
-      <span>Sharp</span>
-      <span>Git</span>
-    </div>
-  </section>
+<section class="working">
+  <h2>Currently Working On</h2>
+  <p>AI-Powered Smart Interview Resume Evaluation System</p>
+</section>
 
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
-    <h2>Projects</h2>
+<button onclick="toggleProjects()" class="btn">
+  View Projects
+</button>
 
-    <div class="project-card">
-      <h3>Image Watermark Tool</h3>
-      <p>A web app to add custom watermarks to images using a serverless backend.</p>
-      <div class="project-links">
-        <a href="#" target="_blank">Live</a>
-        <a href="#" target="_blank">GitHub</a>
-      </div>
-    </div>
+<section id="projects" class="hidden">
+  <h2>Projects</h2>
 
-    <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>This personal portfolio built using HTML, CSS, and JavaScript.</p>
-      <div class="project-links">
-        <a href="#" target="_blank">Live</a>
-        <a href="#" target="_blank">GitHub</a>
-      </div>
-    </div>
-  </section>
+  <div class="card">
+    <h3>Watermark Web</h3>
+    <a href="https://watermark-web-beta.vercel.app/" target="_blank">Live</a>
+    <a href="https://github.com/SagnikAB/watermark-web" target="_blank">GitHub</a>
+  </div>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
+  <div class="card">
+    <h3>Project C Tutorials</h3>
+    <a href="https://project-c-tutorials.vercel.app/" target="_blank">Live</a>
+    <a href="https://github.com/SagnikAB/Project-C-tutorials" target="_blank">GitHub</a>
+  </div>
 
-    <p>Email: <a href="mailto:sagnikdam29@gmail.com">sagnikdam29@gmail.com</a></p>
+  <div class="card">
+    <h3>College App</h3>
+    <a href="https://github.com/SagnikAB/CollegeApp" target="_blank">GitHub</a>
+  </div>
+</section>
 
-    <div class="socials">
-      <a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/sagnik-dam-b33bb3322" target="_blank">LinkedIn</a>
-      <a href="https://x.com/29Sagnik" target="_blank">Twitter</a>
-    </div>
-  </section>
+<section class="contact">
+  <h2>Contact</h2>
+  <a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
+  <a href="https://x.com/29Sagnik" target="_blank">X</a>
+  <a href="https://www.linkedin.com/in/sagnik-dam-b33bb3322" target="_blank">LinkedIn</a>
+  <a href="mailto:sagnikdam29@gmail.com">Email</a>
+</section>
 
-  <footer>
-    © 2026 Sagnik Dam
-  </footer>
+<footer>
+  <p>© 2026 Sagnik</p>
+</footer>
 
-  <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
