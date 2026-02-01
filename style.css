@@ -6,7 +6,7 @@
   font-family:'Inter',sans-serif;
 }
 
-/* BODY */
+/* BODY BACKGROUND */
 body{
   background:url('dark-bg.png') no-repeat center/cover;
   color:white;
@@ -38,11 +38,19 @@ body.light .overlay{
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  text-align:center;
   position:relative;
 }
 
-.hero h1{ font-size:48px; }
-.subtitle{ opacity:0.8; margin-top:5px; }
+.hero h1{
+  font-size:48px;
+  letter-spacing:1px;
+}
+
+.subtitle{
+  opacity:0.8;
+  margin-top:5px;
+}
 
 /* INFO CARDS */
 .info-cards{
@@ -72,7 +80,9 @@ body.light .info-card{
 }
 
 /* BUTTON */
-.center{ margin-top:25px; }
+.center{
+  margin-top:25px;
+}
 
 .btn{
   padding:12px 25px;
@@ -82,6 +92,7 @@ body.light .info-card{
   font-weight:600;
   background:white;
   color:black;
+  transition:0.2s;
 }
 
 .btn:hover{
@@ -129,7 +140,7 @@ body.light .project-card{
   transform:scale(1.15);
 }
 
-/* AUTO SWAP ICONS */
+/* AUTO ICON SWAP */
 body.light .github{
   content:url('github-black.png');
 }
@@ -138,7 +149,7 @@ body.light .globe{
   content:url('globe-black.png');
 }
 
-/* CONTACT */
+/* CONTACT LINKS */
 .links a{
   display:block;
   margin:6px;
@@ -156,7 +167,7 @@ footer{
   opacity:0.6;
 }
 
-/* TOGGLE SWITCH */
+/* ===== MODERN TOGGLE SWITCH ===== */
 .switch{
   position:absolute;
   top:20px;
@@ -174,8 +185,10 @@ footer{
   border-radius:30px;
   position:relative;
   cursor:pointer;
+  transition:0.3s;
 }
 
+/* knob */
 .slider::before{
   content:"";
   position:absolute;
@@ -188,12 +201,23 @@ footer{
   transition:0.3s;
 }
 
+/* when checked */
 .switch input:checked + .slider{
   background:#00c6ff;
 }
 
 .switch input:checked + .slider::before{
   transform:translateX(24px);
+}
+
+/* ===== LIGHT MODE TOGGLE VISIBILITY FIX ===== */
+body.light .slider{
+  background:#ddd;
+  border:1px solid #999;
+}
+
+body.light .slider::before{
+  background:black;
 }
 
 /* RESPONSIVE */
