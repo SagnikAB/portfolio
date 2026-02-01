@@ -107,3 +107,50 @@ body.light .links a{
   display:inline-block;
   cursor:pointer;
 }
+/* ===== HERO CENTER ===== */
+.hero{
+  height:70vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero h1{
+  font-size:48px;
+}
+
+.subtitle{
+  opacity:0.8;
+}
+
+/* ===== INFO CARDS ===== */
+.info-cards{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+  margin-top:-80px;
+}
+
+.info-card{
+  width:280px;
+  padding:22px;
+  border-radius:16px;
+  background:rgba(20,20,20,0.85);
+  backdrop-filter:blur(12px);
+  transition:0.3s;
+  text-align:center;
+}
+
+.info-card:hover{
+  transform:translateY(-8px);
+}
+
+body.light .info-card{
+  background:white;
+  color:black;
+}
+
