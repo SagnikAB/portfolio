@@ -42,6 +42,16 @@ gsap.utils.toArray(".section").forEach((section) => {
   });
 });
 
+gsap.from(".github-graph-wrapper", {
+  scrollTrigger: {
+    trigger: ".github-graph-wrapper",
+    start: "top 80%",
+  },
+  opacity: 0,
+  y: 60,
+  duration: 1,
+});
+
 document.querySelectorAll(".progress").forEach((bar) => {
   const value = bar.dataset.skill;
   gsap.to(bar, {
