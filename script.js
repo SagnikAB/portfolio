@@ -54,17 +54,6 @@ document.querySelectorAll(".progress").forEach((bar) => {
   });
 });
 
-fetch("https://api.github.com/users/SagnikAB")
-  .then((res) => res.json())
-  .then((data) => {
-    document.getElementById("githubStats").innerHTML = `
-    <h3>${data.name}</h3>
-    <p>Public Repositories: ${data.public_repos}</p>
-    <p>Followers: ${data.followers}</p>
-    <p>Following: ${data.following}</p>
-  `;
-  });
-
 document.querySelectorAll(".tilt").forEach((card) => {
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
