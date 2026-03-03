@@ -1,4 +1,3 @@
-// THREE BACKGROUND
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -29,10 +28,8 @@ function animate() {
 }
 animate();
 
-// HERO FLOAT
 gsap.to(".floating-text", { y: -20, duration: 2, repeat: -1, yoyo: true });
 
-// SCROLL REVEAL
 gsap.utils.toArray(".section").forEach((section) => {
   gsap.from(section, {
     scrollTrigger: {
@@ -45,7 +42,6 @@ gsap.utils.toArray(".section").forEach((section) => {
   });
 });
 
-// SKILL BARS
 document.querySelectorAll(".progress").forEach((bar) => {
   const value = bar.dataset.skill;
   gsap.to(bar, {
@@ -58,7 +54,6 @@ document.querySelectorAll(".progress").forEach((bar) => {
   });
 });
 
-// GITHUB API
 fetch("https://api.github.com/users/SagnikAB")
   .then((res) => res.json())
   .then((data) => {
@@ -70,7 +65,6 @@ fetch("https://api.github.com/users/SagnikAB")
   `;
   });
 
-// TILT
 document.querySelectorAll(".tilt").forEach((card) => {
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
