@@ -1,8 +1,3 @@
-// THEME
-document.getElementById("themeToggle").onclick = () => {
-  document.body.classList.toggle("light");
-};
-
 // THREE BACKGROUND
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -34,7 +29,7 @@ function animate() {
 }
 animate();
 
-// FLOATING HERO
+// HERO FLOAT
 gsap.to(".floating-text", { y: -20, duration: 2, repeat: -1, yoyo: true });
 
 // SCROLL REVEAL
@@ -50,7 +45,7 @@ gsap.utils.toArray(".section").forEach((section) => {
   });
 });
 
-// SKILL ANIMATION
+// SKILL BARS
 document.querySelectorAll(".progress").forEach((bar) => {
   const value = bar.dataset.skill;
   gsap.to(bar, {
@@ -63,27 +58,26 @@ document.querySelectorAll(".progress").forEach((bar) => {
   });
 });
 
-// GITHUB STATS
+// GITHUB API
 fetch("https://api.github.com/users/SagnikAB")
   .then((res) => res.json())
   .then((data) => {
     document.getElementById("githubStats").innerHTML = `
     <h3>${data.name}</h3>
-    <p>Public Repos: ${data.public_repos}</p>
+    <p>Public Repositories: ${data.public_repos}</p>
     <p>Followers: ${data.followers}</p>
+    <p>Following: ${data.following}</p>
   `;
   });
 
-// TILT EFFECT
+// TILT
 document.querySelectorAll(".tilt").forEach((card) => {
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = (y - centerY) / 20;
-    const rotateY = (centerX - x) / 20;
+    const rotateX = (y - rect.height / 2) / 20;
+    const rotateY = (rect.width / 2 - x) / 20;
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
   card.addEventListener("mouseleave", () => {
