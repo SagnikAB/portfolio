@@ -1,4 +1,4 @@
-// THEME TOGGLE
+// THEME
 document.getElementById("themeToggle").onclick = () => {
   document.body.classList.toggle("light");
 };
@@ -28,19 +28,14 @@ scene.add(mesh);
 
 function animate() {
   requestAnimationFrame(animate);
-  mesh.rotation.x += 0.005;
-  mesh.rotation.y += 0.005;
+  mesh.rotation.x += 0.004;
+  mesh.rotation.y += 0.004;
   renderer.render(scene, camera);
 }
 animate();
 
-// FLOATING TEXT
-gsap.to(".floating-text", {
-  y: -20,
-  duration: 2,
-  repeat: -1,
-  yoyo: true,
-});
+// FLOATING HERO
+gsap.to(".floating-text", { y: -20, duration: 2, repeat: -1, yoyo: true });
 
 // SCROLL REVEAL
 gsap.utils.toArray(".section").forEach((section) => {
@@ -55,9 +50,9 @@ gsap.utils.toArray(".section").forEach((section) => {
   });
 });
 
-// SKILL BARS
+// SKILL ANIMATION
 document.querySelectorAll(".progress").forEach((bar) => {
-  const value = bar.getAttribute("data-skill");
+  const value = bar.dataset.skill;
   gsap.to(bar, {
     scrollTrigger: {
       trigger: bar,
@@ -73,7 +68,25 @@ fetch("https://api.github.com/users/SagnikAB")
   .then((res) => res.json())
   .then((data) => {
     document.getElementById("githubStats").innerHTML = `
+    <h3>${data.name}</h3>
     <p>Public Repos: ${data.public_repos}</p>
     <p>Followers: ${data.followers}</p>
   `;
   });
+
+// TILT EFFECT
+document.querySelectorAll(".tilt").forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 20;
+    const rotateY = (centerX - x) / 20;
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateX(0) rotateY(0)";
+  });
+});
