@@ -1,121 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sagnik Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sagnik Dam — Interactive Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="style.css" />
 
-<body>
+    <!-- THREE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
 
-<main>
-<div class="overlay">
-
-<!-- HERO -->
-<section class="hero">
-  <h1>Sagnik Dam</h1>
-  <p class="subtitle">Aspiring Software Developer</p>
-
-  <label class="switch">
-    <input type="checkbox" id="modeToggle">
-    <span class="slider"></span>
-  </label>
-</section>
-
-<!-- INFO CARDS -->
-<section class="info-cards">
-  <div class="info-card">
-    <h2>About Me</h2>
-    <p>I build web apps, developer tools and love exploring AI technologies.</p>
-  </div>
-
-  <div class="info-card">
-    <h2>Tech Stack</h2>
-    <p>Python • Java • C • C++ • JavaScript • HTML • CSS • Git • GitHub • VS Code</p>
-  </div>
-
-  <div class="info-card">
-    <h2>Currently Working On</h2>
-    <p>AI-Powered Smart Interview Resume Evaluation System</p>
-  </div>
-</section>
-
-<div class="center">
-  <button class="btn" onclick="toggleProjects()">View Projects</button>
-</div>
-
-<!-- PROJECTS -->
-<section id="projects" class="section hidden">
-  <h2>Projects</h2>
-
-  <div class="project-container">
-
-    <!-- CARD 1 -->
-    <div class="project-card">
-      <div class="icons">
-        <a href="https://github.com/SagnikAB/watermark-web" target="_blank">
-          <img src="github-white.png" class="icon github-dark" alt="GitHub">
-          <img src="github_black.png" class="icon github-light" alt="GitHub">
-        </a>
-        <a href="https://watermark-web-beta.vercel.app/" target="_blank">
-          <img src="globe-white.png" class="icon globe-dark" alt="Live Site">
-          <img src="globe-black.png" class="icon globe-light" alt="Live Site">
-        </a>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="logo">SD</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#github">GitHub</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle">☀</button>
       </div>
-      <h3>Watermark Web</h3>
-      <p>Add watermarks to images instantly.</p>
-    </div>
+    </nav>
 
-    <!-- CARD 2 -->
-    <div class="project-card">
-      <div class="icons">
-        <a href="https://github.com/SagnikAB/Project-C-tutorials" target="_blank">
-          <img src="github-white.png" class="icon github-dark" alt="GitHub">
-          <img src="github_black.png" class="icon github-light" alt="GitHub">
-        </a>
-        <a href="https://project-c-tutorials.vercel.app/" target="_blank">
-          <img src="globe-white.png" class="icon globe-dark" alt="Live Site">
-          <img src="globe-black.png" class="icon globe-light" alt="Live Site">
-        </a>
+    <canvas id="bg"></canvas>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="floating-text">Sagnik Dam</h1>
+      <p>Aspiring Software Developer • AI • Web • Interactive Systems</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section glass">
+      <h2>About Me</h2>
+      <p>
+        I build intelligent systems, interactive web experiences, and developer
+        tools blending design with engineering.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Featured Projects</h2>
+
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="dark-bg.png" />
+          <div class="project-overlay">
+            <h3>Keyboard Shortcut Universe</h3>
+            <a href="https://github.com/SagnikAB" target="_blank">View</a>
+          </div>
+        </div>
       </div>
-      <h3>Project C Tutorials</h3>
-      <p>C programming learning platform.</p>
-    </div>
+    </section>
 
-    <!-- CARD 3 -->
-    <div class="project-card">
-      <div class="icons">
-        <a href="https://github.com/SagnikAB/CollegeApp" target="_blank">
-          <img src="github-white.png" class="icon github-dark" alt="GitHub">
-          <img src="github_black.png" class="icon github-light" alt="GitHub">
-        </a>
+    <!-- SKILLS -->
+    <section id="skills" class="section glass">
+      <h2>Skills</h2>
+      <div class="skill">
+        <span>JavaScript</span>
+        <div class="bar"><div class="progress" data-skill="90"></div></div>
       </div>
-      <h3>College App</h3>
-      <p>College management concept app.</p>
-    </div>
+      <div class="skill">
+        <span>Python</span>
+        <div class="bar"><div class="progress" data-skill="85"></div></div>
+      </div>
+    </section>
 
-  </div>
-</section>
+    <!-- GITHUB -->
+    <section id="github" class="section">
+      <h2>GitHub Activity</h2>
+      <div id="githubStats"></div>
+    </section>
 
-<!-- CONTACT -->
-<section class="section">
-  <h2>Contact</h2>
-  <div class="links">
-    <a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
-    <a href="https://x.com/29Sagnik" target="_blank">X</a>
-    <a href="https://www.linkedin.com/in/sagnik-dam-b33bb3322" target="_blank">LinkedIn</a>
-    <a href="mailto:sagnikdam29@gmail.com">Email</a>
-  </div>
-</section>
+    <!-- CONTACT -->
+    <section id="contact" class="section glass">
+      <h2>Connect</h2>
+      <div class="socials">
+        <a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/sagnik-dam-b33bb3322" target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://x.com/29Sagnik" target="_blank">X</a>
+      </div>
+    </section>
 
-<footer>© Author- Sagnik Dam</footer>
+    <footer>© Author — Sagnik Dam</footer>
 
-</div>
-</main>
+    <audio id="ambientSound" loop>
+      <source
+        src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2a777f8ad4.mp3?filename=ambient-110108.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
 
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
