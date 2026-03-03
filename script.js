@@ -34,7 +34,7 @@ function animate() {
 }
 animate();
 
-// FLOATING HERO TEXT
+// FLOATING TEXT
 gsap.to(".floating-text", {
   y: -20,
   duration: 2,
@@ -42,7 +42,7 @@ gsap.to(".floating-text", {
   yoyo: true,
 });
 
-// SCROLL REVEALS
+// SCROLL REVEAL
 gsap.utils.toArray(".section").forEach((section) => {
   gsap.from(section, {
     scrollTrigger: {
@@ -77,10 +77,3 @@ fetch("https://api.github.com/users/SagnikAB")
     <p>Followers: ${data.followers}</p>
   `;
   });
-
-// SCROLL SOUND
-const audio = document.getElementById("ambientSound");
-window.addEventListener("scroll", () => {
-  if (audio.paused) audio.play();
-  audio.volume = Math.min(window.scrollY / 1000, 0.4);
-});
